@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+body{
+margin: 0px;
+}
+table {
+font-family: Arial, sans-serif;
+border-collapse: collapse;
+width: 100%;
+}
+
+td, th {
+text-align: left;
+padding: 8px;
+}
+
+tr:nth-child(even) {
+background-color: #dddddd;
+}
+.card_row{
+display: flex;
+justify-content: space-evenly;
+margin-top: 2%
+}
+.card{
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+font-family: Arial, sans-serif;
+background-color: #93acb5;
+}
+.card_header{
+height: 20px;
+width: 100%;
+padding-top: 20px;
+padding-bottom: 20px;
+background-color: #96c5f7;
+text-align: center;
+font-size: 1.2em;
+font-weight: bold;
+}
+.card_body{
+background-color: #93acb5;
+width: 100%;
+padding-bottom: 20px;
+padding-top: 26px;
+display: flex;
+justify-content: space-around;
+}
+.table_card_body{
+background-color: #93acb5;
+width: 100%;
+
+display: flex;
+justify-content: space-around;
+}
+.text_card_body{
+background-color: #93acb5;
+width: 100%;
+padding-bottom: 20px;
+padding-top: 10px;
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+font-size: 1.3em;
+}
+.card_text{
+margin: 10px;
+margin-left: 20px;
+margin-right: 20px;
+}
+.circle_container{
+text-align: center;
+}
+.background_circle{
+width: 150px;
+height: 150px;
+border-radius: 50%;
+background-color: #ADB0BB;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.background_circle2{
+width: 150px;
+height: 150px;
+border-radius: 50%;
+background-color: #3396FF;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.circle{
+width: 150px;
+height: 150px;
+border-radius: 50%;
+background-image: linear-gradient(to right, transparent 50%, #3396FF 0);
+}
+.circle2{
+width: 150px;
+height: 150px;
+border-radius: 50%;
+background-image: linear-gradient(to right, transparent 50%, #ADB0BB 0);
+}
+.pie_segment{
+width: 150px;
+height: 150px;
+border-radius: 50%;
+background-image: linear-gradient(to right, transparent 50%, #3396FF 0);
+transform: rotate(30.384deg);
+}
+.pie_segment2{
+width: 150px;
+height: 150px;
+border-radius: 50%;
+background-image: linear-gradient(to right, transparent 50%, #3396FF 0);
+transform: rotate(36deg);
+}
+.pie_segment3{
+width: 150px;
+height: 150px;
+border-radius: 50%;
+background-image: linear-gradient(to right, transparent 50%, #ADB0BB 0);
+transform: rotate(142.812deg);
+}
+.inner_circle{
+width: 120px;
+height: 120px;
+border-radius: 50%;
+background-color: #F2F4FF;
+position: relative;
+top: 10%;
+left: 10%;
+text-align: center;
+transform: rotate(-30.384deg);
+}
+.inner_circle2{
+width: 120px;
+height: 120px;
+border-radius: 50%;
+background-color: #F2F4FF;
+position: relative;
+top: 10%;
+left: 10%;
+text-align: center;
+transform: rotate(-36deg);
+}
+.inner_circle3{
+width: 120px;
+height: 120px;
+border-radius: 50%;
+background-color: #F2F4FF;
+position: relative;
+top: 10%;
+left: 10%;
+text-align: center;
+transform: rotate(-142.812deg);
+}
+.circle_text{
+position: relative;
+top: 34%;
+font-size: 2em;
+}
+.circle_footer{
+font-size: 2.5em;
+margin-top: 20px;
+
+}
+.circle_footer2{
+font-size: 2em;
+margin-top: 16px;
+}
+.graph_background{
+width: 80%;
+background-color: #F2F4FF;
+height: 238px;
+margin-top: -6px;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.graph_top{
+display:flex;
+height: 85%;
+}
+.graph_index{
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+justify-content: space-evenly;
+height: 100%;
+width: 10%;
+margin-left: 10px;
+}
+.graph_number_container{
+height: 20%;
+position: relative;
+}
+.graph_number{
+position: absolute;
+bottom: -7px;
+}
+.graph_body{
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+width: 90%;
+height: 100%;
+border-left: 1px solid black;
+border-bottom: 1px solid black;
+position: relative;
+}
+.graph_line{
+border-bottom: 1px dashed grey;
+}
+.graph_bottom{
+display: flex;
+justify-content: flex-start;
+width: 100%;
+height: 15%;
+}
+.graph_label1{
+position: absolute;
+text-align: center;
+bottom: -24px;
+left: 15%;
+}
+.graph_label2{
+position: absolute;
+text-align: center;
+bottom: -24px;
+left: 43.5%;
+}
+.graph_label3{
+position: absolute;
+text-align: center;
+bottom: -24px;
+left: 70%;
+}
+.graph_value1{
+position: absolute;
+text-align: center;
+bottom: 131px;
+left: 15%;
+}
+.graph_value2{
+position: absolute;
+text-align: center;
+bottom: 131px;
+left: 44%;
+}
+.graph_value3{
+position: absolute;
+text-align: center;
+bottom: 131px;
+left: 71%;
+}
+.bar{
+position: absolute;
+height: 55.02%;
+width: 15%;
+bottom: 0;
+left: 14%;
+background-color: #A2536C;
+}
+.bar2{
+position: absolute;
+height: 46.9%;
+width: 15%;
+bottom: 0;
+left: 43%;
+background-color: #A2536C;
+}
+.bar3{
+position: absolute;
+height: 35.76%;
+width: 15%;
+bottom: 0;
+left: 71%;
+background-color: #A2536C;
+}
+.topbar{
+height: 50px;
+width: 100%;
+background-color: #595f58;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+text-align: center;
+position: relative;
+font-family: Arial, sans-serif;
+}
+.page_label{
+color: #EAECEA;
+font-size: 2.3em;
+padding-top:3px
+}
+.nav_button1{
+position: absolute;
+height: 40px;
+width: 10%;
+font-size: 1.5em;
+padding-top: 10px;
+background-color: #767F76;
+transition: .1s;
+}
+.nav_button2{
+position: absolute;
+border-right: 1px solid black;
+border-left: 1px solid black;
+height: 40px;
+width: 10%;
+left: 10%;
+font-size: 1.5em;
+padding-top: 10px;
+background-color: #767F76;
+}
+.nav_button3{
+position: absolute;
+border-left: 1px solid black;
+height: 39px;
+width: 10%;
+right: 0;
+font-size: 1.5em;
+padding-top: 11px;
+background-color: #767F76;
+}
+.nav_button1:hover{
+background-color: #959D95;
+}
+.nav_button2:hover{
+background-color: #959D95;
+}
+.nav_button3:hover{
+background-color: #959D95;
+}
+.mem_row:hover{
+background-color: #C18597;
+}
+.back_button{
+position: absolute;
+right: 0;
+top: 0;
+border-left: 1px solid black;
+height: 100%;
+width: 82px;
+background-color: #69ABF2;
+}
+.back_text{
+position: absolute;
+right: 10px;
+top: 8px;
+}
+.back_button:hover{
+background-color: #B4D5F8;
+}
+</style>
+</head>
+<body style='background-color:#6c756b' onload='init()'>
+<div class='topbar'>
+	<div class='nav_button1' onclick='changePage("aggregate")'>
+		Aggregate
+	</div>
+	<div class='nav_button2' onclick='changePage("individual")'>
+		Individual
+	</div>
+	<div class='nav_button3' onclick='changePage("about")'>
+		About
+	</div>
+	<div class='page_label'>
+		2020 Congressional Stock Purchases
+	</div>
+</div>
+<div id='aggregate' style='display:block'>
+	<div class='card_row'>
+		<div class='card' style='width:52%;'>
+			<div class='card_header'>
+				Congressional Rate of Beating the Market Vs. Professionally Managed Funds
+			</div>
+			<div class='card_body'>
+				<div class='circle_container'>
+					<div class='background_circle'>
+						<div class='circle'>
+							<div class='pie_segment'>
+								<div class='inner_circle'>
+									<div class='circle_text'>58.44%</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class='circle_footer'>
+						House
+					</div>
+				</div>
+				<div class='circle_container'>
+					<div class='background_circle'>
+						<div class='circle'>
+							<div class='pie_segment2'>
+								<div class='inner_circle2'>
+									<div class='circle_text'>60%</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class='circle_footer'>
+						Senate
+					</div>
+				</div>
+				<div class='circle_container'>
+					<div class='background_circle'>
+						<div class='circle'>
+							<div class='pie_segment3'>
+								<div class='inner_circle3'>
+									<div class='circle_text'>39.67%</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class='circle_footer2'>
+						Large-Cap</br>Funds
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class='card' style='width:34%;'>
+			<div class='card_header'>
+			Average Congress Member Performance Vs. Market
+			</div>
+			<div class='card_body'>
+				<div class='graph_background'>
+					<div class='graph_top'>
+						<div class='graph_index'>
+							<div class='graph_number_container'>
+								<div class='graph_number'>40%</div>
+							</div>
+							<div class='graph_number_container'>
+								<div class='graph_number'>30%</div>
+							</div>
+							<div class='graph_number_container'>
+								<div class='graph_number'>20%</div>
+							</div>
+							<div class='graph_number_container'>
+								<div class='graph_number'>10%</div>
+							</div>
+							<div class='graph_number_container'>
+								<div class='graph_number'>0%</div>
+							</div>
+						</div>
+						<div class='graph_body'>
+							<div class='graph_line'></div>
+							<div class='graph_line'></div>
+							<div class='graph_line'></div>
+							<div class='graph_line'></div>
+							<div class='bar'></div>
+							<div class='bar2'></div>
+							<div class='bar3'></div>
+							<div class='graph_label1'>House</div>
+							<div class='graph_label2'>Senate</div>
+							<div class='graph_label3'>S&P 500</div>
+							<div class='graph_value1'>27.51%</div>
+							<div class='graph_value2'>23.45%</div>
+							<div class='graph_value3'>17.88%</div>
+						</div>
+					</div>
+					<div class='graph_bottom'>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class='card_row' style='margin-bottom:2%'>
+		<div class='card' style='width:25%;'>
+			<div class='card_header'>
+				Average Return per Stock Purchased
+			</div>
+			<div class='text_card_body'>
+				<div class='card_text'>
+					Between date of purchase and year-end:
+				</div>
+				<div class='card_text' style='margin-left: 30px'>
+					• The average stock purchased by a member of Congress grew 29.29%
+				</div>
+				<div class='card_text' style='margin-left: 30px'>
+					• The average stock purchased by a House Representative grew 28.47%
+				</div>
+				<div class='card_text' style='margin-left: 30px'>
+					• The average stock purchased by a Senator grew 32.99%
+				</div>
+			</div>
+		</div>
+		<div class='card' style='width:61%;'>
+			<div class='card_header'>
+				Most Popular Investments
+			</div>
+			<div class='table_card_body'>
+				<table>
+					<tr>
+						<th>Rank</th>
+						<th style='text-align:center'>Name</th>
+						<th>Ticker</th>
+						<th style='padding-left:30px;'>Total Purchases Disclosed</th>
+						<th>Total Amount Invested (Approx.)</th>
+					</tr>
+					<tr class='popularity_row'>
+					</tr>
+					<tr class='popularity_row'>
+					</tr>
+					<tr class='popularity_row'>
+					</tr>
+					<tr class='popularity_row'>
+					</tr>
+					<tr class='popularity_row'>
+					</tr>
+					<tr class='popularity_row'>
+					</tr>
+					<tr class='popularity_row'>
+					</tr>
+					<tr class='popularity_row'>
+					</tr>
+					<tr class='popularity_row'>
+					</tr>
+					<tr class='popularity_row'>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+<div id='individual' style='display:none'>
+	<div class='card_row' style='margin-bottom:2%;align-items: flex-start;'>
+		<div class='card' style='width:36%'>
+			<div class='card_header'>
+				House - Click to View
+			</div>
+			<div class='table_card_body'>
+				<table id='house_list'>
+					<tr>
+						<th style='text-align:center'>Name</th>
+						<th style='text-align:center'>District</th>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div class='card' style='width:36%'>
+			<div class='card_header'>
+				Senate - Click to View
+			</div>
+			<div class='table_card_body'>
+				<table id='senate_list'>
+					<tr>
+						<th style='text-align:center'>Name</th>
+						<th style='text-align:center'>State</th>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+<div id='indiv_data' style='display:none'>
+	<div class='card_row' style='margin-bottom:2%;align-items: flex-start;'>
+		<div class='card' style='width:60%'>
+			<div class='card_header' style='position:relative'>
+				<div id='indiv_info'>
+					Rep Name - Dist - Reported Stock Purchases 2020
+				</div>
+				<div class='back_button'>
+					<div class='back_text' onclick='changePage("individual")'>
+						Back</br>
+						To List
+					</div>
+				</div>
+			</div>
+			<div class='table_card_body'>
+				<table id='indiv_trades'>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+<div id='about' style='display:none'>
+	<div class='card_row' style='margin-bottom:2%'>
+		<div class='card' style='width:60%'>
+			<div class='card_header'>
+				About
+			</div>
+			<div class='text_card_body'>
+				<div class='card_text'>
+					<b>Sources:</b>
+				</div>
+				<div class='card_text' style='margin-left: 30px'>
+					• Congressional Stock Trading Data from <a href="https://senatestockwatcher.com/">senatestockwatcher.com</a>.
+				</div>
+				<div class='card_text' style='margin-left: 30px'>
+					• Historical Stock Price Data from <a href="https://finance.yahoo.com/"> Yahoo Finance</a>. Accessed using <a href="https://pypi.org/project/yfinance/">yfinance</a>.
+				</div>
+				<div class='card_text' style='margin-left: 30px'>
+					• Managed Fund Performance Data from <a href="https://www.spglobal.com/spdji/en/research-insights/spiva/">SPIVA</a>.
+				</div>
+				<div class='card_text'>
+					<b>Limitations:</b>
+				</div>
+				<div class='card_text' style='margin-left: 30px'>
+					Congressional stock trades are not disclosed to the public in a very accessible way.
+					<a href="https://senatestockwatcher.com/">Senatestockwatcher.com</a> manually enters each disclosure into their database to the best of their ability.
+					This analysis covers only 2020, because that is the only year that has complete data for both the House and Senate.
+				</div>
+				<div class='card_text' style='margin-left: 30px'>
+					Congress members do not disclose their total holdings, just individual trades.
+				</div>
+				<div class='card_text' style='margin-left: 30px'>
+					Congress members are not required to disclose the exact value of each trade, only the range that it falls in.
+					As such, the precise amount invested can only be approximated based on the disclosed range.
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="main.js"></script>
+<script type="text/javascript" src="house_data2020.js"></script>
+<script type="text/javascript" src="senate_data2020.js"></script>
+</body>
+</html>
